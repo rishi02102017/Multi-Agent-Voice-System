@@ -83,7 +83,7 @@ requests.post(AIRTABLE_URL, json=airtable_payload, headers=HEADERS)
 
 | Setup | Screenshot |
 |-------|------------|
-| Vapi Prompt & Model | ![Riley Prompt](Vapi1.png) |
+| Vapi Prompt & Model | ![Riley Prompt](vapi1.png) |
 | Airtable Records | ![Airtable](Airtable1.png) |
 | FastAPI Webhook Live | ![Server](Replit3.png) |
 | Incoming POST Webhook | ![Webhook Log](Replit2.png) |
