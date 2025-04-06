@@ -1,4 +1,4 @@
-# 🛠️ Interia Voice AI Agent 
+# Interia Voice AI Agent 
 
 This project demonstrates a complete Voice AI workflow for **lead qualification in interior design**, powered by a virtual assistant called **Riley**. It is built for the **Interior Design Voice AI Agent
 Tech Assessment**.
@@ -15,15 +15,15 @@ To build an AI-powered voice assistant that:
 
 ---
 
-##  System Components
+##  🛠️ System Components
 
 ### 🔹 1. Vapi (Voice Assistant Platform)
 - **Assistant Name**: Riley
 - **LLM Model**: `mistralai/Mistral-7B-Instruct-v0.2` via Together AI
-- **Voice Provider**: ElevenLabs
+- **Voice Provider**: RimeAI
 - **Transcription**: Deepgram
 - **System Prompt**: 
-  > Hi! This is Riley, your virtual assistant from Interia — a leading interior design firm in North India, known for our work in modular kitchens, wardrobes, and full home interiors.
+  > Hi! This is Riley from Interia. I’m here to help you with your interior design needs. How may I assist you today?
 
   Riley asks the following questions:
   1. Full name and phone number
@@ -35,6 +35,23 @@ To build an AI-powered voice assistant that:
   7. Preferred style: Premium, Mid-range or Budget?
   8. Start timeline and deadlines
   9. Confirm intent → logs to Airtable
+
+---
+
+## 🔐 Provider Key Setup (Vapi Configuration)
+
+We used the following API keys and set them up in the **Provider Keys** section of Vapi:
+
+| Provider     | Purpose                             | Status     |
+|--------------|--------------------------------------|------------|
+| **Together AI** | Language Model (Mistral-7B-Instruct) |  Added |
+| **RimeAI**  | Voice Generation (Natural speech)   |  Added |
+| **Deepgram**    | Transcription of user voice         |  Added |
+
+These were added in the **"Provider Keys"** section of Vapi and tested with webhook configuration pointing to our FastAPI server.
+
+- Webhook URL used: `https://<replit-url>/webhook`
+- Confirmed that POST requests from Vapi were received and processed by FastAPI
 
 ---
 
@@ -85,13 +102,13 @@ requests.post(AIRTABLE_URL, json=airtable_payload, headers=HEADERS)
 |-------|------------|
 | Vapi Prompt & Model | ![Riley Prompt](vapi1.png) |
 | Airtable Records | ![Airtable](Airtable1.png) |
-| FastAPI Webhook Live | ![Server](Replit3.png) |
-| Incoming POST Webhook | ![Webhook Log](Replit2.png) |
 | Vapi Test Message | ![Server Live](Replit1.png) |
+| Incoming POST Webhook | ![Webhook Log](Replit2.png) |
+| FastAPI Webhook Live | ![Server](Replit3.png) |
 
 ---
 
-##  Summary of Steps Done
+## 📄 Summary of Steps Done
 
 - [x] Created Airtable base with tables (`Call_Records`, `Leads`)
 - [x] Built a working webhook in **FastAPI** (Replit)
@@ -101,13 +118,6 @@ requests.post(AIRTABLE_URL, json=airtable_payload, headers=HEADERS)
 - [x] Created custom structured prompt for Riley
 - [x] Vapi connected to FastAPI server using `/webhook`
 - [x] All calls reflected in Airtable with transcript
-
----
-
-## 💡 Optional (Not Implemented)
-
-- [ ] n8n Workflow for parallel Airtable push (skipped as FastAPI is used)
-- [ ] Dual logging to both `Call_Records` and `Leads`
 
 ---
 
