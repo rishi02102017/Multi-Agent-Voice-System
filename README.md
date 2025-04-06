@@ -1,5 +1,7 @@
 # Interia Voice AI Agent 
 
+![Demo Banner](https://github.com/rishi02102017/Multi-Agent-Voice-System/blob/main/Ekam_logo.jpg)
+
 This project demonstrates a complete Voice AI workflow for **lead qualification in interior design**, powered by a virtual assistant called **Riley**. It is built for the **Interior Design Voice AI Agent
 Tech Assessment**.
 
