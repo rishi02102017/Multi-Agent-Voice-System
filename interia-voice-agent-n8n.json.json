@@ -1,0 +1,33 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "interia-call",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "1ca231b3-8637-4377-878a-ce0611d50866",
+      "name": "Webhook",
+      "webhookId": "79146203-d4f4-44d7-85b9-837442604160"
+    }
+  ],
+  "pinData": {},
+  "connections": {},
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "da557bc6-b696-49aa-9a18-34deb6d0a21d",
+  "meta": {
+    "instanceId": "9c7f282cb0ea4c271b9e880a5b2a14180bc3222bb1d6a380565f6403d556e46f"
+  },
+  "id": "UOKgRAsXUgaeFPU1",
+  "tags": []
+}
