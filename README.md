@@ -21,7 +21,7 @@ To build an AI-powered voice assistant that:
 
 ##  🛠️ System Components
 
-### 🔹 1. Vapi (Voice Assistant Platform)
+###  1. Vapi (Voice Assistant Platform)
 - **Assistant Name**: Riley
 - **LLM Model**: `mistralai/Mistral-7B-Instruct-v0.2` via Together AI
 - **Voice Provider**: RimeAI
@@ -59,7 +59,7 @@ These were added in the **"Provider Keys"** section of Vapi and tested with webh
 
 ---
 
-### 🔹 2. Airtable Database
+###  2. Airtable Database
 
 - **Base Name**: Lead Qualification Assistant
 - **Tables Used**:
@@ -73,7 +73,7 @@ These were added in the **"Provider Keys"** section of Vapi and tested with webh
 
 ---
 
-### 🔹 3. FastAPI Webhook (Hosted on Replit)
+###  3. FastAPI Webhook (Hosted on Replit)
 
 - **Deployed on**: Replit
 - **Webhook Path**: `/webhook`
@@ -100,7 +100,7 @@ requests.post(AIRTABLE_URL, json=airtable_payload, headers=HEADERS)
 
 ---
 
-### 🔹 4. Postman Webhook Testing
+###  4. Postman Webhook Testing
 
 - After setting up the FastAPI webhook, we verified its functionality using Postman.
 - The POST request payload simulated a Vapi call response with fields like `call_id`, `start_time`, `transcript`, etc.
@@ -111,7 +111,7 @@ requests.post(AIRTABLE_URL, json=airtable_payload, headers=HEADERS)
 
 ---
 
-### 🔹 5. n8n Workflow (Webhook Logging)
+###  5. n8n Workflow (Webhook Logging)
 
 - To demonstrate low-code automation, we created a **n8n workflow** that:
   - Accepts POST requests on `/interia-call`
@@ -123,7 +123,7 @@ requests.post(AIRTABLE_URL, json=airtable_payload, headers=HEADERS)
 - JSON body and headers displayed in n8n canvas
 - n8n JSON file is included for submission
 
-### 🔹 6.  Screenshot
+###  6.  Screenshot
 
 | Setup | Screenshot |
 |-------|------------|
