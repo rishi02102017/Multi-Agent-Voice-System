@@ -100,7 +100,30 @@ requests.post(AIRTABLE_URL, json=airtable_payload, headers=HEADERS)
 
 ---
 
-### 🔹 4.  Screenshot
+### 🔹 4. Postman Webhook Testing
+
+- After setting up the FastAPI webhook, we verified its functionality using Postman.
+- The POST request payload simulated a Vapi call response with fields like `call_id`, `start_time`, `transcript`, etc.
+
+#### Status
+- Sent successfully to `/webhook-test/interia-call`
+- Received `200 OK` with message `"Workflow was started"`
+
+---
+
+### 🔹 5. n8n Workflow (Webhook Logging)
+
+- To demonstrate low-code automation, we created a **n8n workflow** that:
+  - Accepts POST requests on `/interia-call`
+  - Logs incoming call data for visual monitoring
+- The `Test URL` was hit using Postman with the same payload as above.
+
+#### Status
+- Workflow triggered successfully
+- JSON body and headers displayed in n8n canvas
+- n8n JSON file is included for submission
+
+### 🔹 6.  Screenshot
 
 | Setup | Screenshot |
 |-------|------------|
@@ -109,6 +132,8 @@ requests.post(AIRTABLE_URL, json=airtable_payload, headers=HEADERS)
 | Vapi Test Message | ![Server Live](Replit1.png) |
 | Incoming POST Webhook | ![Webhook Log](Replit2.png) |
 | FastAPI Webhook Live | ![Server](Replit3.png) |
+| n8n Webhook Capture | ![n8n Output](n8n1.png) |
+| Postman Test Payload | ![Postman Test](postman1.png) |
 
 ---
 
@@ -122,7 +147,8 @@ requests.post(AIRTABLE_URL, json=airtable_payload, headers=HEADERS)
 - [x] Created custom structured prompt for Riley
 - [x] Vapi connected to FastAPI server using `/webhook`
 - [x] All calls reflected in Airtable with transcript
-
+- [x] Created and tested n8n workflow with Postman trigger
+      
 ---
 
 ## 📦 Files Included
@@ -131,7 +157,8 @@ requests.post(AIRTABLE_URL, json=airtable_payload, headers=HEADERS)
 - `prompt.txt` → Riley’s structured prompt
 - `README.md` → Full project documentation
 - `requirements.txt` → Required Python packages
-
+- `n8n_interia_webhook.json` → Exported n8n workflow
+- 7 `.png` files → Screenshots
 ---
 
 ## 🧑‍💻 Built by
@@ -149,3 +176,4 @@ M.Tech Artificial Intelligence – IIT Jodhpur
 - All endpoints tested live with Vapi webhook delivery
 - FastAPI deployed with auto-sleeping Replit instance
 - Clean integration with Airtable API
+- n8n + Postman used for local webhook testing and JSON log capture
